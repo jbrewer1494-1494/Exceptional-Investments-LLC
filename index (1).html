@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exceptional Investments | Real Estate Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Exceptional Investments is a real estate solutions company buying and selling property across the Midwest and Eastern United States."
+  />
+  <style>
+    :root {
+      --primary: #1f4b82;
+      --primary-light: #2f6ab3;
+      --accent: #f4b41a;
+      --bg: #f5f7fa;
+      --text: #222;
+      --muted: #666;
+      --radius-lg: 14px;
+      --radius-sm: 6px;
+      --shadow-soft: 0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 2px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.3rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      padding: 3.5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #e7f0ff;
+      color: #29539b;
+      border-radius: 999px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 2.7vw, 2.6rem);
+      margin-bottom: 0.6rem;
+      color: #111827;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      font-size: 0.98rem;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid #dde3f0;
+      background: #fff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.3rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-outline {
+      border: 1px solid #c5cfe1;
+      background: transparent;
+      color: var(--primary);
+    }
+
+    .hero-meta {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.7rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid #e1e6f0;
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .hero-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .stat-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      margin-bottom: 1.3rem;
+      font-size: 0.8rem;
+    }
+
+    .stat {
+      flex: 1 1 120px;
+    }
+
+    .stat-label {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.7rem;
+      color: #9ca3af;
+      margin-bottom: 0.15rem;
+    }
+
+    .stat-value {
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .divider {
+      height: 1px;
+      background: #edf0f6;
+      margin: 1rem 0;
+    }
+
+    .section {
+      padding: 2.5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+      text-align: left;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: #111827;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      border: 1px solid #e3e7f2;
+      box-shadow: 0 4px 14px rgba(15,23,42,0.03);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+    }
+
+    .chip {
+      padding: 0.12rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid #e1e4f0;
+      background: #f9fafb;
+      color: #6b7280;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .list li {
+      margin-bottom: 0.45rem;
+      display: flex;
+      gap: 0.4rem;
+    }
+
+    .list li::before {
+      content: "•";
+      color: var(--primary);
+      font-weight: 900;
+      margin-top: 0.05rem;
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+    }
+
+    .tag {
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      border: 1px dashed #cfd5e5;
+      background: #fff;
+    }
+
+    .contact-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.4rem;
+      border: 1px solid #d9e0f0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: #374151;
+    }
+
+    .contact-form {
+      margin-top: 1.1rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.18rem;
+      font-size: 0.8rem;
+    }
+
+    .field-group label {
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .field-group input,
+    .field-group textarea,
+    .field-group select {
+      padding: 0.45rem 0.6rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+
+    .field-group textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    footer {
+      padding: 1.8rem 0 2.2rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      color: #9ca3af;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .disclaimer {
+      margin-top: 0.4rem;
+      max-width: 540px;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .two-column,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2.4rem;
+      }
+
+      nav ul {
+        display: none; /* mobile: simple header, no menu */
+      }
+
+      .hero-card {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <div class="logo-mark">EI</div>
+          <span>Exceptional Investments</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#markets">Markets</a></li>
+            <li><a href="#verify">Verify Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="badge">
+              Real Estate Solutions • Midwest & Eastern U.S.
+            </div>
+            <h1>Buying & Selling Residential Property with Integrity.</h1>
+            <p>
+              Exceptional Investments is a real estate investment company that
+              purchases and resells residential property across the Midwest and
+              Eastern regions of the United States. We focus on clear
+              communication, transparent offers, and straightforward closings.
+            </p>
+
+            <div class="hero-highlights">
+              <span class="pill">Single-family & small multi-family</span>
+              <span class="pill">As-is purchases</span>
+              <span class="pill">Investor-friendly deals</span>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Request an Offer</a>
+              <a href="#verify" class="btn btn-outline">Verify Our Company</a>
+            </div>
+
+            <div class="hero-meta">
+              No obligation • No high-pressure sales • You choose your closing
+              date.
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Company snapshot">
+            <h2>Company Snapshot</h2>
+            <p>
+              Exceptional Investments LLC is a privately owned real estate
+              investment company. We work with homeowners, investors, and
+              licensed real estate agents to structure win-win solutions.
+            </p>
+
+            <div class="stat-row">
+              <div class="stat">
+                <div class="stat-label">Focus</div>
+                <div class="stat-value">Buy & Sell</div>
+                <div class="stat-note">Residential property</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Regions</div>
+                <div class="stat-value">Midwest & East</div>
+                <div class="stat-note">Multi-state coverage</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Timeline</div>
+                <div class="stat-value">Flexible</div>
+                <div class="stat-note">As-is & conventional</div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div style="font-size: 0.78rem; color: #6b7280;">
+              <strong>Legal Note:</strong> Exceptional Investments is an
+              investment company, not a brokerage. We may work with licensed
+              real estate agents, attorneys, and title companies as part of a
+              standard closing process.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Services -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Who We Are</div>
+          <h2 class="section-title">A straightforward real estate investment company.</h2>
+          <p class="section-subtitle">
+            We buy houses directly from owners, improve properties as needed,
+            and sell or hold them as long-term investments.
+          </p>
+        </div>
+
+        <div class="grid-3" id="services">
+          <div class="card">
+            <h3>We Buy Properties As-Is</h3>
+            <p>
+              We purchase single-family homes and small multi-family properties
+              in any condition. You don’t need to make repairs, cleanouts, or
+              updates before selling.
+            </p>
+            <div class="chip-row">
+              <span class="chip">No required repairs</span>
+              <span class="chip">Flexible closing date</span>
+              <span class="chip">Cash or financing</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>We Sell to Buyers & Investors</h3>
+            <p>
+              We resell updated or value-add properties to homeowners and
+              investors. We can coordinate with your real estate agent and your
+              preferred lender or title company.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Retail & investment</span>
+              <span class="chip">Transparent pricing</span>
+              <span class="chip">Standard contracts</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>We Partner with Professionals</h3>
+            <p>
+              We routinely work with real estate agents, wholesalers, attorneys,
+              and title companies to make each transaction clean and
+              verifiable for all parties involved.
+            </p>
+            <div class="chip-row">
+              <span class="chip">Agent-friendly</span>
+              <span class="chip">Contract clarity</span>
+              <span class="chip">Third-party title</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Markets & Process -->
+    <section id="markets" class="section">
+      <div class="container">
+        <div class="two-column">
+          <div>
+            <div class="section-header">
+              <div class="section-kicker">Where We Operate</div>
+              <h2 class="section-title">Midwest & Eastern United States.</h2>
+              <p class="section-subtitle">
+                Our primary focus is on stable and emerging markets in the
+                Midwest and Eastern regions of the U.S., with an emphasis on
+                working-class and middle-income neighborhoods.
+              </p>
+            </div>
+
+            <ul class="list">
+              <li>Midwestern states with strong rental demand and job growth.</li>
+              <li>Eastern states with established neighborhoods and value-add potential.</li>
+              <li>Local partners (agents, contractors, title companies) in each market.</li>
+            </ul>
+
+            <div class="tag-cloud">
+              <span class="tag">Single-family homes</span>
+              <span class="tag">Small multi-family</span>
+              <span class="tag">Turnkey rentals</span>
+              <span class="tag">Light to heavy rehab</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="section-header">
+              <div class="section-kicker">Our Process</div>
+              <h2 class="section-title">Simple, documented, and verifiable.</h2>
+              <p class="section-subtitle">
+                Every transaction runs through written agreements and third-party
+                title or closing companies.
+              </p>
+            </div>
+            <ul class="list">
+              <li>You share basic property information (address, condition, timeline).</li>
+              <li>We review the property, local data, and recent comparable sales.</li>
+              <li>You receive a clear written offer with no obligation to accept.</li>
+              <li>If we agree, we sign a purchase agreement and open title.</li>
+              <li>A licensed title or closing company handles the transfer of funds and deed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verify & Contact -->
+    <section id="verify" class="section">
+      <div class="container">
+        <div class="two-column">
+          <div>
+            <div class="section-header">
+              <div class="section-kicker">Verification</div>
+              <h2 class="section-title">How to verify Exceptional Investments.</h2>
+              <p class="section-subtitle">
+                We encourage homeowners, buyers, and partners to verify who
+                they’re working with. Here are straightforward ways to confirm
+                our business details.
+              </p>
+            </div>
+
+            <ul class="list">
+              <li>
+                Check state business records for
+                <strong>Exceptional Investments LLC</strong> in the state where
+                the property is located. 
+                <!-- Replace this note with exact state registration info when you’re ready. -->
+              </li>
+              <li>
+                Confirm that your purchase and sale agreement lists the correct
+                entity name and contact information.
+              </li>
+              <li>
+                Call the title or closing company handling the transaction to
+                confirm that Exceptional Investments is the buyer or seller on
+                record.
+              </li>
+              <li>
+                Ask for our preferred closing attorney or title contact to
+                verify details and wiring instructions before sending any funds.
+              </li>
+            </ul>
+
+            <p style="font-size: 0.8rem; color: #6b7280; margin-top: 0.6rem;">
+              <em>
+                Note: Always independently confirm wiring instructions and
+                closing details directly with the title or closing company to
+                protect yourself from fraud.
+              </em>
+            </p>
+          </div>
+
+          <div id="contact">
+            <div class="contact-card">
+              <h2 style="font-size: 1.05rem; margin-bottom: 0.3rem;">
+                Contact Exceptional Investments
+              </h2>
+              <p style="font-size: 0.86rem; color: #6b7280; margin-bottom: 0.6rem;">
+                Complete the form below and we will follow up to learn more
+                about your situation and property.
+              </p>
+
+              <div class="contact-row">
+                <div>
+                  <span class="contact-label">Phone:</span>
+                  <span> (205) 433-9713</span>
+                </div>
+                <div>
+                  <span class="contact-label">Email:</span>
+                  <a href="mailto:jbrewer.re@gmail.com">jbrewer.re@gmail.com</a>
+                </div>
+                <div>
+                  <span class="contact-label">Company:</span>
+                  <span>Exceptional Investments LLC</span>
+                </div>
+              </div>
+
+              <form class="contact-form">
+                <div class="field-group">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your full name" />
+                </div>
+                <div class="field-group">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="you@example.com" />
+                </div>
+                <div class="field-group">
+                  <label for="phone">Phone</label>
+                  <input id="phone" type="tel" placeholder="(555) 555-5555" />
+                </div>
+                <div class="field-group">
+                  <label for="relationship">I am a…</label>
+                  <select id="relationship">
+                    <option value="">Select one</option>
+                    <option value="homeowner">Homeowner looking to sell</option>
+                    <option value="buyer">Buyer / investor</option>
+                    <option value="agent">Real estate agent</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <label for="message">Property Address & Message</label>
+                  <textarea
+                    id="message"
+                    placeholder="Property address, city/state, and a brief description of your situation."
+                  ></textarea>
+                </div>
+                <button type="button" class="btn btn-primary">
+                  Submit Inquiry
+                </button>
+                <div style="font-size: 0.75rem; color: #9ca3af;">
+                  This form is for initial contact only. Submitting does not
+                  create any obligation or agreement.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div>&copy; <span id="year"></span> Exceptional Investments LLC. All rights reserved.</div>
+          <div class="disclaimer">
+            Exceptional Investments LLC is a real estate investment company. We
+            are not providing legal, tax, or financial advice. Please consult
+            appropriate licensed professionals before making real estate or
+            financial decisions.
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#verify">Verify</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
